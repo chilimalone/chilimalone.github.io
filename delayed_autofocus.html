@@ -1,16 +1,11 @@
 <html>
-  <body>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
       input:is(:-webkit-autofill, :autofill) {
        border: 15px dotted red;
       }
     </style>
-
-    <h1>Email form will appear in 3 seconds!</h1>
-
-    <form action="/index.html" id="emailForm">
-
-      <button type="submit">Submit</button></form>
 
     <script>
      function addEmail() {
@@ -33,5 +28,12 @@
      setTimeout(addEmail, 2500);
      setTimeout(focusEmail, 3300);
     </script>
+  </head>
+  <body>
+    <h1>Email form will appear in 3 seconds!</h1>
+
+    <form action="/index.html" id="emailForm">
+      <button type="submit">Submit</button>
+    </form>
   </body>
 </html>
