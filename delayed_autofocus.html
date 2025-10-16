@@ -1,0 +1,36 @@
+<html>
+  <body>
+    <style>
+input:is(:-webkit-autofill, :autofill) {
+ border: 15px dotted red;
+}
+</style>
+
+Email form will appear in 3 seconds!
+
+<form action="/index/0-4" id="emailForm">
+
+<button type="submit">Submit</button></form>
+
+<script>
+ function addEmail() {
+ let emailNode = document.createElement('input');
+ emailNode.type = 'text';
+ emailNode.autocomplete = 'email';
+ emailNode.placeholder = 'E-mail';
+ emailNode.id='aiya';
+ emailNode.autofocus = true;
+ let emailForm = document.getElementById('emailForm');
+ emailForm.insertBefore(emailNode, emailForm.firstChild); 
+ }
+ 
+ function focusEmail() {
+ let node = document.getElementById('aiya');
+ node.focus();
+ }
+
+ setTimeout(addEmail, 2500);
+ setTimeout(focusEmail, 3300);
+</script>
+  </body>
+</html>
