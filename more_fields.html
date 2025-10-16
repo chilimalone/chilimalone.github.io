@@ -1,31 +1,33 @@
 <html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+     function toggleAddress(element) {
+       if (element.checked) {
+         document.getElementById('addressss').style.opacity = 0;
+       } else {
+         document.getElementById('addressss').style.opacity = 1;
+       }
+     }
+    
+     function addEmail() {
+       let elem = document.getElementById('additionalFields');
+       let newField = document.createElement('input');
+       newField.autocomplete='email';
+       newField.placeholder='email';
+       elem.appendChild(newField);
+       elem.appendChild(document.createElement('br'));
+     }
+    </script>
+  </head>
   <body>
     <form action="/index.html">
-      <input aria-required="true" autocomplete="shipping given-name" name="firstName" placeholder="First name" required="" type="text" />
-<br/>
-<div onclick="addEmail()" style="background-color: blue; padding: 5px; color: white; margin-bottom:10px;">Click to add another email field</div>
+      <input aria-required="true" autocomplete="shipping given-name" name="firstName" placeholder="First name" required="" type="text" /><br/>
 
-<div id="additionalFields" style="margin-bottom:10px;"></div>
+      <div onclick="addEmail()" style="background-color: blue; padding: 5px; color: white; margin-bottom:10px;">Click to add another email field</div>
+      <div id="additionalFields" style="margin-bottom:10px;"></div>
 
-<button type="submit">Submit</button></form>
-
-<script>
- function toggleAddress(element) {
- if (element.checked) {
- document.getElementById('addressss').style.opacity = 0;
- } else {
- document.getElementById('addressss').style.opacity = 1;
- }
- }
-
- function addEmail() {
- let elem = document.getElementById('additionalFields');
- let newField = document.createElement('input');
- newField.autocomplete='email';
- newField.placeholder='email';
- elem.appendChild(newField);
- elem.appendChild(document.createElement('br'));
- }
-</script>
+      <button type="submit">Submit</button>
+    </form>
   </body>
 </html>
