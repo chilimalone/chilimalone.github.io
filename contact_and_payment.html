@@ -2,45 +2,37 @@
   <body>
     
 
-<form action="/index/0-4"><input aria-required="true" autocomplete="shipping given-name" name="firstName" placeholder="First name" required="" type="text" /> <input aria-required="true" autocomplete="shipping family-name" name="lastName" placeholder="Last name" required="" type="text" /><br />
-<input aria-required="true" autocomplete="shipping address-line1" name="address1" placeholder="Address" required="" type="text" id="addressss" /><br />
-<input aria-required="false" autocomplete="shipping address-line2" name="address2" placeholder="Apt suite etc" type="text" /><br />
-<input aria-required="true" autocomplete="shipping address-level2" name="city" placeholder="City" required="" type="text" /> <input aria-required="true" autocomplete="shipping address-level1" name="state" placeholder="State" required="" type="text" /> <input aria-required="true" autocomplete="shipping postal-code" name="state" placeholder="Zip Code" required="" type="text" /><br />
+    <form action="/index.html">
+      <input aria-required="true" autocomplete="shipping given-name" name="firstName" placeholder="First name" required="" type="text" /> 
+      <input aria-required="true" autocomplete="shipping family-name" name="lastName" placeholder="Last name" required="" type="text" /><br />
+      
+      <input aria-required="true" autocomplete="shipping address-line1" name="address1" placeholder="Address" required="" type="text" id="addressss" /><br />
+      <input aria-required="false" autocomplete="shipping address-line2" name="address2" placeholder="Apt suite etc" type="text" /><br />
+      
+      <input aria-required="true" autocomplete="shipping address-level2" name="city" placeholder="City" required="" type="text" /> 
+      <input aria-required="true" autocomplete="shipping address-level1" name="state" placeholder="State" required="" type="text" /> 
+      <input aria-required="true" autocomplete="shipping postal-code" name="state" placeholder="Zip Code" required="" type="text" /><br />
+      
+      <label><input type="checkbox" onchange="toggleAddress(this)" id="checkbox" /> Check me to hide address </label> <br />
+      
+      <br />
+      <input aria-required="true" autocomplete="cc-name" type="text" placeholder="Name on card" /> <br />
+      <input aria-required="true" autocomplete="cc-number" type="text" placeholder="Number" /> <br />
+      <input aria-required="true" autocomplete="cc-csc" type="text" placeholder="CVV" /> <br />
+      
+      <input aria-required="true" autocomplete="cc-exp" type="text" placeholder="MM/YYYY" /> <br />
+      
+      <button type="submit">Submit</button>
+    </form>
 
-<label><input type="checkbox" onchange="toggleAddress(this)" id="checkbox" /> Check me to hide address </label> <br />
-
-<br />
-<input aria-required="true" autocomplete="cc-name" type="text" placeholder="Name on card" /> <br />
-<input aria-required="true" autocomplete="cc-number" type="text" placeholder="Number" /> <br />
-<input aria-required="true" autocomplete="cc-csc" type="text" placeholder="CVV" /> <br />
-
-<input aria-required="true" autocomplete="cc-exp" type="text" placeholder="MM/YYYY" /> <br />
-
-<br/>
-<div onclick="addEmail()" style="background-color: blue; padding: 5px; color: white; margin-bottom:10px;">Click to add another email field</div>
-
-<div id="additionalFields" style="margin-bottom:10px;"></div>
-
-<button type="submit">Submit</button></form>
-
-<script>
- function toggleAddress(element) {
- if (element.checked) {
- document.getElementById('addressss').style.opacity = 0;
- } else {
- document.getElementById('addressss').style.opacity = 1;
- }
- }
-
- function addEmail() {
- let elem = document.getElementById('additionalFields');
- let newField = document.createElement('input');
- newField.autocomplete='email';
- newField.placeholder='email';
- elem.appendChild(newField);
- elem.appendChild(document.createElement('br'));
- }
-</script>
-
-      </body>
+    <script>
+     function toggleAddress(element) {
+       if (element.checked) {
+         document.getElementById('addressss').style.opacity = 0;
+       } else {
+         document.getElementById('addressss').style.opacity = 1;
+       }
+     }
+    </script>
+  </body>
 </html>
