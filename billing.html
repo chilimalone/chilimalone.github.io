@@ -1,30 +1,6 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script>
-     function toggleAddress(element) {
-       if (element.checked) {
-         const autocompletes = {
-           "billing address-line1" : "Address line 1",
-           "billing address-line2" : "Address line 2",
-           "billing address-level2" : "City",
-           "billing address-level1": "State",
-           "billing postal-code" : "Zip"
-         };
-         let parentElem = document.getElementById('billing');
-         autocompletes.forEach(
-           (value, key, map) -> {
-             let elem = document.createElement('input');
-             elem.placeholder = key;
-             elem.autocomplete = value;
-             elem.type = "text";
-             parentElem.addChild(elem);
-           });
-       } else {
-         document.getElementById('billing').innerHTML = '';
-       }
-     }
-    </script>
   </head>
   <body>
     <form action="/index.html">
@@ -53,3 +29,29 @@
       
       <button type="submit">Submit</button>
     </form>
+    <script>
+     function toggleAddress(element) {
+       if (element.checked) {
+         const autocompletes = {
+           "billing address-line1" : "Address line 1",
+           "billing address-line2" : "Address line 2",
+           "billing address-level2" : "City",
+           "billing address-level1": "State",
+           "billing postal-code" : "Zip"
+         };
+         let parentElem = document.getElementById('billing');
+         autocompletes.forEach(
+           (value, key, map) -> {
+             let elem = document.createElement('input');
+             elem.placeholder = key;
+             elem.autocomplete = value;
+             elem.type = "text";
+             parentElem.addChild(elem);
+           });
+       } else {
+         document.getElementById('billing').innerHTML = '';
+       }
+     }
+    </script>
+  </body>
+</html>
