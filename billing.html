@@ -2,8 +2,9 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
-     function toggleAddress(element) {
-       if (element.checked) {
+     function toggleAddress() {
+       let checkbox = document.getElementById('checkbox');
+       if (checkbox) {
          const autocompletes = {
            "billing address-line1" : "Address line 1",
            "billing address-line2" : "Address line 2",
@@ -15,8 +16,8 @@
          autocompletes.forEach(
            (value, key, map) -> {
              let elem = document.createElement('input');
-             elem.placeholder = key;
-             elem.autocomplete = value;
+             elem.placeholder = value;
+             elem.autocomplete = key;
              elem.type = "text";
              parentElem.addChild(elem);
            });
@@ -38,7 +39,7 @@
       <input aria-required="true" autocomplete="shipping address-level1" name="state" placeholder="State" required="" type="text" /> 
       <input aria-required="true" autocomplete="shipping postal-code" name="state" placeholder="Zip Code" required="" type="text" /><br />
       
-      <label><input type="checkbox" onchange="toggleAddress(this)" id="checkbox" /> Use different billing address </label> <br />
+      <label><input type="checkbox" onchange="toggleAddress()" id="checkbox" /> Use different billing address </label> <br />
       
       <br />
       <input aria-required="true" autocomplete="cc-name" type="text" placeholder="Name on card" /> <br />
