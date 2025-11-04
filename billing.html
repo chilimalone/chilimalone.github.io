@@ -13,14 +13,13 @@
            "billing postal-code" : "Zip"
          };
          let parentElem = document.getElementById('billing');
-         autocompletes.forEach(
-           (value, key, map) => {
-             let elem = document.createElement('input');
-             elem.placeholder = value;
-             elem.autocomplete = key;
-             elem.type = "text";
-             parentElem.addChild(elem);
-           });
+         for (const [key, value] of Object.entries(autocompletes)) {
+           let elem = document.createElement('input');
+           elem.placeholder = value;
+           elem.autocomplete = key;
+           elem.type = "text";
+           parentElem.addChild(elem);
+          }
        } else {
          document.getElementById('billing').innerHTML = '';
        }
