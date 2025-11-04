@@ -13,6 +13,9 @@
            "billing postal-code" : "Zip"
          };
          let parentElem = document.getElementById('billing');
+         let text = document.createElement('h3');
+         text.innerHTML = 'Billing address';
+         parentElem.appendChild(text);
          for (const [key, value] of Object.entries(autocompletes)) {
            let elem = document.createElement('input');
            elem.placeholder = value;
@@ -46,7 +49,7 @@
       <input aria-required="true" autocomplete="cc-csc" type="text" placeholder="CVV" /> <br />
       
       <input aria-required="true" autocomplete="cc-exp" type="text" placeholder="MM/YYYY" /> <br />
-
+      <br />
       <div id="billing">
         
       </div>
