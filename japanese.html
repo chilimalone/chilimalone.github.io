@@ -1,42 +1,39 @@
-<html>
+<html lang="ja">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
-    <body>
-<h2>お問い合わせフォーム</h2>
-
+  <body>
+    <h2>お問い合わせフォーム</h2>
     <form action="/submit-endpoint" method="POST">
-        <div class="form-group">
-            <label for="名前">お名前:
-            <input type="text" id="名前" /> </label>
+      <div class="form-group">
+        <label for="名前">お名前:
+        <input type="text" id="名前" /> </label>
+      </div>
+      <div class="form-group">
+        <label for="メールアドレス">メールアドレス:
+        <input id="メールアドレス" type="text"/> </label>
+      </div>
+      <div class="form-group">
+        <label for="電話番号"> 電話番号:
+        <input type="tel" id="電話番号" /> </label>
+      </div>
+      <div class="form-group">
+        <div class="form-group zip-code">
+          <label for="郵便番号">郵便番号:</label>
+          <input type="text" id="郵便番号">
         </div>
-
-        <div class="form-group">
-            <label for="メールアドレス">メールアドレス:
-            <input id="メールアドレス" type="text"/> </label>
+        <!-- Address -->
+        <div class="form-group pref">
+          <label for="都道府県">都道府県:</label>
+          <input type="text" id="都道府県">
         </div>
-
-        <div class="form-group">
-            <label for="電話番号"> 電話番号:
-            <input type="tel" id="電話番号" /> </label>
+        <!-- City/Municipality (市区町村) -->
+        <div class="form-group city">
+          <label for="住所">住所:</label>
+          <input type="text" id="住所" />
         </div>
-
-        <div class="form-group">
-            <div class="form-group zip-code">
-                    <label for="郵便番号">郵便番号:</label>
-                    <input type="text" id="郵便番号">
-                </div>
-                <!-- Address -->
-                <div class="form-group pref">
-                    <label for="都道府県">都道府県:</label>
-                    <input type="text" id="都道府県">
-                </div>
-                <!-- City/Municipality (市区町村) -->
-                <div class="form-group city">
-                    <label for="住所">住所:</label>
-                    <input type="text" id="住所" />
-                </div>
-        </div>
-</body></html>
-        <button type="submit">送信</button>
+      </div>
+      <button type="submit">送信</button>
     </form>
+  </body>
+</html>
