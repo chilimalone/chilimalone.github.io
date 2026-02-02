@@ -1,0 +1,124 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <a href="/multi_window.html" target="_blank">Click on me to open a new window</a>
+    <form action="/index.html">
+      <input aria-required="true" autocomplete="shipping given-name" name="firstName" placeholder="First name" required="" type="text" /> 
+      <input aria-required="true" autocomplete="shipping family-name" name="lastName" placeholder="Last name" required="" type="text" /><br />
+      
+      <input aria-required="true" autocomplete="shipping address-line1" name="address1" placeholder="Address" required="" type="text" id="addressss" /><br />
+      <input aria-required="false" autocomplete="shipping address-line2" name="address2" placeholder="Apt suite etc" type="text" /><br />
+      
+      <input aria-required="true" autocomplete="shipping address-level2" name="city" placeholder="City" required="" type="text" /> 
+      <input aria-required="true" autocomplete="shipping address-level1" name="state" placeholder="State" required="" type="text" /> 
+      <input aria-required="true" autocomplete="shipping postal-code" name="state" placeholder="Zip Code" required="" type="text" /><br />
+
+      <select name="countryCode" autocomplete="shipping country-name">
+        <option selected="" value="US">United States</option>
+        <option value="DE">Germany</option>
+        <option value="SE">Sweden</option>
+        <option value="GB">United Kingdom</option>
+        <option value="">---</option>
+        <option value="AX">Åland Islands</option>
+        <option value="AL">Albania</option>
+        <option value="AD">Andorra</option>
+        <option value="AM">Armenia</option>
+        <option value="AU">Australia</option>
+        <option value="AT">Austria</option>
+        <option value="BH">Bahrain</option>
+        <option value="BY">Belarus</option>
+        <option value="BE">Belgium</option>
+        <option value="BA">Bosnia &amp; Herzegovina</option>
+        <option value="BG">Bulgaria</option>
+        <option value="CA">Canada</option>
+        <option value="HR">Croatia</option>
+        <option value="CY">Cyprus</option>
+        <option value="CZ">Czechia</option>
+        <option value="DK">Denmark</option>
+        <option value="EE">Estonia</option>
+        <option value="FO">Faroe Islands</option>
+        <option value="FI">Finland</option>
+        <option value="FR">France</option>
+        <option value="GE">Georgia</option>
+        <option value="DE">Germany</option>
+        <option value="GI">Gibraltar</option>
+        <option value="GR">Greece</option>
+        <option value="GL">Greenland</option>
+        <option value="GP">Guadeloupe</option>
+        <option value="GG">Guernsey</option>
+        <option value="HU">Hungary</option>
+        <option value="IS">Iceland</option>
+        <option value="ID">Indonesia</option>
+        <option value="IE">Ireland</option>
+        <option value="IM">Isle of Man</option>
+        <option value="IL">Israel</option>
+        <option value="IT">Italy</option>
+        <option value="JP">Japan</option>
+        <option value="JE">Jersey</option>
+        <option value="XK">Kosovo</option>
+        <option value="LV">Latvia</option>
+        <option value="LI">Liechtenstein</option>
+        <option value="LT">Lithuania</option>
+        <option value="LU">Luxembourg</option>
+        <option value="MY">Malaysia</option>
+        <option value="MT">Malta</option>
+        <option value="YT">Mayotte</option>
+        <option value="MD">Moldova</option>
+        <option value="MC">Monaco</option>
+        <option value="ME">Montenegro</option>
+        <option value="NL">Netherlands</option>
+        <option value="NC">New Caledonia</option>
+        <option value="NZ">New Zealand</option>
+        <option value="MK">North Macedonia</option>
+        <option value="NO">Norway</option>
+        <option value="PG">Papua New Guinea</option>
+        <option value="PL">Poland</option>
+        <option value="PT">Portugal</option>
+        <option value="QA">Qatar</option>
+        <option value="RE">Réunion</option>
+        <option value="RO">Romania</option>
+        <option value="SM">San Marino</option>
+        <option value="SA">Saudi Arabia</option>
+        <option value="RS">Serbia</option>
+        <option value="SG">Singapore</option>
+        <option value="SK">Slovakia</option>
+        <option value="SI">Slovenia</option>
+        <option value="KR">South Korea</option>
+        <option value="ES">Spain</option>
+        <option value="SJ">Svalbard &amp; Jan Mayen</option>
+        <option value="SE">Sweden</option>
+        <option value="CH">Switzerland</option>
+        <option value="TH">Thailand</option>
+        <option value="TR">Türkiye</option>
+        <option value="UA">Ukraine</option>
+        <option value="AE">United Arab Emirates</option>
+        <option value="GB">United Kingdom</option>
+        <option selected="" value="US">United States</option>
+        <option value="VA">Vatican City</option>
+      </select>
+      
+      <label><input type="checkbox" onchange="toggleAddress(this)" id="checkbox" /> Check me to hide address </label> <br />
+      
+      <br />
+      <input aria-required="true" autocomplete="cc-name" type="text" placeholder="Name on card" /> <br />
+      <input aria-required="true" autocomplete="cc-number" type="text" placeholder="Number" /> <br />
+      <input aria-required="true" autocomplete="cc-csc" type="text" placeholder="CVV" /> <br />
+      
+      <input aria-required="true" autocomplete="cc-exp" type="text" placeholder="MM/YYYY" /> <br />
+      
+      <button type="submit">Submit</button>
+    </form>
+
+    <script>
+     function toggleAddress(element) {
+       if (element.checked) {
+         document.getElementById('addressss').style.opacity = 0;
+       } else {
+         document.getElementById('addressss').style.opacity = 1;
+       }
+     }
+    </script>
+  </body>
+</html>
