@@ -1,9 +1,14 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+      function onButtonClick() {
+        window.open("https://chilimalone.github.io/multi_window.html");
+      }
+    </script>
   </head>
   <body>
-    <a href="/multi_window.html" target="_blank">Click on me to open a new window</a>
+    <button onclick="onButtonClick()">Click on me to open a new window</button>
     <form action="/index.html">
       <input aria-required="true" autocomplete="shipping given-name" name="firstName" placeholder="First name" required="" type="text" /> 
       <input aria-required="true" autocomplete="shipping family-name" name="lastName" placeholder="Last name" required="" type="text" /><br />
