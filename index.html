@@ -1,9 +1,40 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        // 1. Get the query string from the current URL
+        const queryString = window.location.search;
+
+        // 2. Parse the query string using URLSearchParams
+        const urlParams = new URLSearchParams(queryString);
+
+        // 3. Select the output container
+        const container = document.getElementById('output');
+
+        // 4. Check if there are any parameters
+        if (urlParams.size === 0) {
+            container.innerHTML = '<p class="empty">No parameters found in the URL.</p>';
+        } else {
+            let htmlContent = '<ul>';
+            
+            // 5. Iterate through all keys and values
+            urlParams.forEach((value, key) => {
+                htmlContent += `<li><strong>${key}:</strong> ${value}</li>`;
+            });
+            
+            htmlContent += '</ul>';
+            container.innerHTML = htmlContent;
+        }
+    </script>
   </head>
   <body>
     <h1>Hi! Welcome to chili's autofill test site</h1>
+    
+    <h1>URL Parameters</h1>
+    <div id="output" class="param-list">
+        <!-- Results will be injected here -->
+    </div>
+
     <div style="width:100%; font-size:24px;">
       <ul>
         <li><a href="/contact_only.html">Contact only</a></li>
