@@ -2,6 +2,7 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
+      document.addEventListener("DOMContentLoaded", () => {
         // 1. Get the query string from the current URL
         const queryString = window.location.search;
 
@@ -25,6 +26,7 @@
             htmlContent += '</ul>';
             container.innerHTML = htmlContent;
         }
+      });
     </script>
   </head>
   <body>
