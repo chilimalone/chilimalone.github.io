@@ -2,25 +2,12 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
-      function onButtonClick() {
-        window.open("https://chilimalone.github.io/multi_window.html");
-      }
-     
-     function focusEmail() {
-       let node = document.getElementById('aiya');
-       node.focus();
-     }
 
-     if (window.opener() === null) {
-       setTimeout(focusEmail, 3300);
-     } else {
-       document.getElementById('aiya2').remove();
-     }
     </script>
   </head>
   <body>
     <button onclick="onButtonClick()">Click on me to open a new window</button>
-    <form action="/index.html">
+    <form action="/index.html" id="theform">
       <input aria-required="true" autocomplete="shipping given-name" name="firstName" id="aiya" placeholder="First name" required="" type="text" /> 
       <input aria-required="true" autocomplete="shipping family-name" name="lastName" id="aiya2" placeholder="Last name" required="" type="text" /><br />
       
@@ -136,6 +123,31 @@
        } else {
          document.getElementById('addressss').style.opacity = 1;
        }
+     }
+
+    function onButtonClick() {
+        window.open("https://chilimalone.github.io/multi_window.html");
+      }
+     
+     function focusEmail() {
+       let node = document.getElementById('aiya');
+       node.focus();
+     }
+
+     if (window.opener() === null) {
+       setTimeout(focusEmail, 3300);
+     } else {
+       document.getElementById('aiya2').remove();
+       
+       let emailNode = document.createElement('input');
+       emailNode.type = 'text';
+       emailNode.autocomplete = 'email';
+       emailNode.placeholder = 'E-mail';
+       emailNode.id='aiya';
+       emailNode.autofocus = true;
+       
+       let emailForm = document.getElementById('theform');
+       emailForm.insertBefore(emailNode, emailForm.firstChild); 
      }
     </script>
   </body>
