@@ -10,15 +10,19 @@
        let node = document.getElementById('aiya');
        node.focus();
      }
-    
-     setTimeout(focusEmail, 3300);
+
+     if (window.opener() === null) {
+       setTimeout(focusEmail, 3300);
+     } else {
+       document.getElementById('aiya2').remove();
+     }
     </script>
   </head>
   <body>
     <button onclick="onButtonClick()">Click on me to open a new window</button>
     <form action="/index.html">
       <input aria-required="true" autocomplete="shipping given-name" name="firstName" id="aiya" placeholder="First name" required="" type="text" /> 
-      <input aria-required="true" autocomplete="shipping family-name" name="lastName" placeholder="Last name" required="" type="text" /><br />
+      <input aria-required="true" autocomplete="shipping family-name" name="lastName" id="aiya2" placeholder="Last name" required="" type="text" /><br />
       
       <input aria-required="true" autocomplete="shipping address-line1" name="address1" placeholder="Address" required="" type="text" id="addressss" /><br />
       <input aria-required="false" autocomplete="shipping address-line2" name="address2" placeholder="Apt suite etc" type="text" /><br />
