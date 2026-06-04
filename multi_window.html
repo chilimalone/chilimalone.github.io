@@ -5,7 +5,7 @@
 
     </script>
   </head>
-  <body>
+  <body id="thebody">
     <br />
     <p>The base window will automatically focus on the "first name" field after 3 seconds. Any subsequent window will have "email" as the first field and no "last name".</p>
     <br />
@@ -149,7 +149,9 @@
        emailNode.id='aiya';
        
        let emailForm = document.getElementById('theform');
-       emailForm.insertBefore(emailNode, emailForm.firstChild); 
+       emailForm.insertBefore(emailNode, emailForm.firstChild);
+
+       document.getElementById('thebody').style.background = "lavender";
      }
     </script>
   </body>
